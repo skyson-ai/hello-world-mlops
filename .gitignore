@@ -1,1 +1,8 @@
 .venv
+.env
+__pycache__/
+*.pyc
+artifacts/
+*.pkl
+*.json
+.DS_Store

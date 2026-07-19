@@ -1,4 +1,20 @@
-# Hello-World MLOps
+<h1 align="center">Hello World MLOps</h1>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
+  <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask">
+  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions">
+  <img src="https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge&logo=mlflow&logoColor=white" alt="MLflow">
+</p>
+
+<p align="center">
+  <em>End-to-end MLOps pipeline: model training, CI/CD, Docker & Flask API</em>
+</p>
+
+---
+
+## Overview
 
 This repository demonstrates a tiny reproducible MLOps flow:
 1. Train a small model (`train.py`) — writes `artifacts/model.pkl` and `artifacts/metrics.json`
@@ -7,22 +23,38 @@ This repository demonstrates a tiny reproducible MLOps flow:
 4. Build a Docker image with `docker build -t hello-mlops .`
 5. CI trains the model and uploads artifacts
 
-## Quick start (local)
-1. Create and activate a venv (example using python 3.13 or 3.11):
-    python -m venv .venv
-    source .venv/bin/activate
+## Tech Stack
 
-2. Install dependencies:
-    pip install --upgrade pip setuptools wheel
-    pip install -r requirements.txt
+- **Python** — Core language
+- **Flask** — API server
+- **Docker** — Containerization
+- **GitHub Actions** — CI/CD pipeline
+- **MLflow** — Experiment tracking
 
-3. Train the model:
-    python train.py
+## Getting Started
 
-4. Run a single prediction from CLI:
-    python run_model.py --input "[5.1, 3.5, 1.4, 0.2]"
+```bash
+git clone https://github.com/skyson-ai/hello-world-mlops.git
+cd hello-world-mlops
+pip install -r requirements.txt
 
-5. Start the API:
-    python src/app.py
-   Then test:
-    curl -X POST "http://127.0.0.1:5000/predict" -H "Content-Type: application/json" -d '{"features":[5.1,3.5,1.4,0.2]}'
+# Train model
+python train.py
+
+# Run predictions
+python run_model.py --input "[5.1,3.5,1.4,0.2]"
+
+# Start API
+python src/app.py
+```
+
+## Docker
+
+```bash
+docker build -t hello-mlops .
+docker run -p 5000:5000 hello-mlops
+```
+
+## Author
+
+**MICHEE CEPHAS** — [GitHub](https://github.com/skyson-ai)
